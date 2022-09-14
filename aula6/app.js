@@ -52,7 +52,7 @@ const numberPar = numbers.filter(numero => {
 
 //Numero descontado de quatro
 const totalDescontoQuatro = (a, b) => (a + b);
-const descontar = numbers.reduce(soma, 0);
+const descontar = numbers.reduce(soma);
 
 //Apenas numeros impares
 // const impares = (valor) => valor % 2 > 0; 
@@ -62,10 +62,16 @@ const numberImpar = numbers.filter(numero =>{
     return numero
 })
 
+//Para somar mais 21 em um tal numero
+const addTwentyOne = (add) => add + 21;
+//Chamando o addTwentyOne para adicionar 21 a todos os numeros impares
+const imparsAdd = numberImpar.map(addTwentyOne);
+
 showArray(numerosMais100, 'main', 'Adicionar 100');
 showArray(numberPar, 'main', 'Apenas os numeros pares');
 showArray([descontar - 4], 'main', 'Descontando 4 no final');
 showArray(numberImpar, 'main', 'Apenas numeros impares');
+showArray(imparsAdd, 'main', 'adicionando 21 aos impares'); 
 
 
 
